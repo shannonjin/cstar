@@ -16,9 +16,12 @@ type var_def = {
 type expr =
   Id of string
 
+type mod = 
+Mod of func_def list
+  
 type defns = mod list
 
-type mod = func_def list
-  
+
+
 
 
