@@ -2,7 +2,7 @@
     open Ast
 %}
 
-%token SEMI LPAREN RPAREN LBRACE RBRACE 
+%token SEMI LPAREN RPAREN LBRACE RBRACE LET EQ MOD
 %token RETURN IF ELSE FOR WHILE INT BOOL FLOAT VOID
 //%token <int> LITERAL
 //%token <bool> BLIT
@@ -27,7 +27,7 @@ func_def:
 var_def:
     LET ID typ EQ expr { }
 module_: 
-    MOD LBRACE defns RBRACE { Modit $1 }
+    MOD LBRACE defns RBRACE { Modit $3 }
 
 
 body: 
