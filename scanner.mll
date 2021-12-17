@@ -11,13 +11,10 @@ rule token = parse
 | '}'      { RBRACE }
 | ';'      { SEMI }
 | '='      { EQ }
+| ':'      { COLON }
+| ','      { COMMA }
 | "fn"     { FN }
-| "void"    { VOID }
-| "int"    { INT }
 | "bool"   { BOOL }
-| "float"  { FLOAT }
-| "char"   { CHAR }
-| "Let"    { LET }
-| "mod"     { MOD }
+| "*"      { STAR }
 | ['a'-'z' 'A'-'Z']['a'-'z' 'A'-'Z' '0'-'9' '_']*     as lxm { ID(lxm) }
 | eof { EOF }
