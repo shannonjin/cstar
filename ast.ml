@@ -2,29 +2,20 @@
 type typ = Int | Bool | Float | Void | Char 
 
 type func_def = {
-    func_name : string; 
-    generic_args : typ list;
-    args : typ list;
-    return_type : typ;
+    fname : string; 
+    typ : typ;
+    parameters : typ * string list;
+    body : expr list;
 }
-
-type var_def = {
-  variable_name : string;
-  variable_type : typ;
-}  
 
 type expr =
   Id of string
-  | CharLit of char
-  | ListLit of expr list
+  | StrLit of string
+  | Call of string * expr list
 
-type module_ = 
-Modit of string * func_def list
-| Modfuck of string * expr
-
-type defn = module_ list
+(*type defn = module_ list*)
   
-type defns = defn list
+type defns = func_def list
 
 
 
