@@ -8,13 +8,15 @@
    let i32_t      	 = L.i32_type    context
      and i8_t       = L.i8_type     context
      and i1_t       = L.i1_type     context
-     and float_t    = L.double_type context in
+     and float_t    = L.double_type context
+     and void_t     = L.void_type   context in
  
    let ltype_of_typ = function
        Int   -> i32_t
      | Char -> i8_t
      | Bool  -> i1_t
      | Float -> float_t
+     | Void -> void_t
   
      in
  
