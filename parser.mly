@@ -18,9 +18,9 @@ defns:
     | defns defn    { defns @ [defn]}
 
 defn:
-    //| func_def      {$1}
-   // | var_def SEMI  {$1}
-    | module_           {$1}
+    | func_def      {$1}
+    | var_def SEMI  {$1}
+    | defn module_           {defn @ [module_]}
 
 func_def:
     FN ID LBRACE body RBRACE { }

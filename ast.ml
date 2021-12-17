@@ -11,7 +11,7 @@ type func_def = {
 type var_def = {
   variable_name : string;
   variable_type : typ;
-} 
+}  
 
 type expr =
   Id of string
@@ -22,8 +22,7 @@ type module_ =
 Modit of string * func_def list
 | Modfuck of string * expr
 
-type defn =
-  module_
+type defn = module_ list
   
 type defns = defn list
 
