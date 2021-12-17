@@ -15,7 +15,7 @@ type var_def = {
 
 type expr =
   Id of string
-  | CharLit of char | WildCard
+  | CharLit of char
   | ListLit of expr list
 
 type module_ = 

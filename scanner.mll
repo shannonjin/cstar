@@ -4,7 +4,7 @@ let letter = ['a'-'z' 'A'-'Z']
 let digit = ['0'-'9']
 
 rule token = parse
-  [' ' '\n' '\r' '\t' '\x0B' '\x0C']+ { WhiteSpace }
+[' ' '\t' '\r' '\n'] { token lexbuf } (* Whitespace *)
 | '('      { LPAREN }
 | ')'      { RPAREN }
 | '{'      { LBRACE }
