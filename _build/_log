@@ -1,0 +1,17 @@
+### Starting build.
+# Target: compiler.ml.depends, tags: { package(llvm), package(llvm.analysis), extension:ml, file:compiler.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm.analysis -package llvm -modules compiler.ml > compiler.ml.depends
+# Target: ast.ml.depends, tags: { package(llvm), package(llvm.analysis), extension:ml, file:ast.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm.analysis -package llvm -modules ast.ml > ast.ml.depends
+# Target: codegen.ml.depends, tags: { package(llvm), package(llvm.analysis), extension:ml, file:codegen.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm.analysis -package llvm -modules codegen.ml > codegen.ml.depends
+# Target: ast.cmo, tags: { package(llvm), package(llvm.analysis), byte, compile, extension:cmo, extension:ml, file:ast.cmo, file:ast.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package llvm.analysis -package llvm -o ast.cmo ast.ml
++ ocamlfind ocamlc -c -package llvm.analysis -package llvm -o ast.cmo ast.ml
+File "ast.ml", line 5, characters 32-43:
+5 |   ; generic_args : generic_type StringMap.t
+                                    ^^^^^^^^^^^
+Error: Unbound module StringMap
+Hint: Did you mean String?
+Command exited with code 2.
+# Compilation unsuccessful.

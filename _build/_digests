@@ -1,0 +1,6 @@
+"Resource: /Users/shannon/Documents/cstar/ast.ml": "@t\206ia\021\129\194\209`L\141\196v\029u"
+"Rule: ocaml dependencies ml (%=compiler )": "\027.\1583\tQq\139\170\169o\002\180\156\209p"
+"Resource: /Users/shannon/Documents/cstar/compiler.ml": "e\237B\145\245\127\131.\018\236\135\020\202\205\234x"
+"Resource: /Users/shannon/Documents/cstar/codegen.ml": "\143\007,\028\168\152\020H\139\202\194\142\186\154\011)"
+"Rule: ocaml dependencies ml (%=ast )": "\134h#\197$\189\238\150//\164-\190\214ra"
+"Rule: ocaml dependencies ml (%=codegen )": "\002'\177\130nT\027n\160\216<\140L\218\173\131"
