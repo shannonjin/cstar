@@ -6,9 +6,9 @@
 #
 # See https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc
 
-compiler.native :
+cstar.native :
 	opam config exec -- \
-	ocamlbuild -use-ocamlfind compiler.native
+	ocamlbuild -use-ocamlfind cstar.native
 
 # "make clean" removes all generated files
 

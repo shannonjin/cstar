@@ -15,3 +15,10 @@
 
 defns: 
     /* nothing */    { [] }
+ //   | defns defn      { $1 @ [$2]}
+
+//defn:
+ 
+
+
+
