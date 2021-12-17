@@ -6,7 +6,7 @@
 %token RETURN IF ELSE FOR WHILE INT BOOL FLOAT VOID
 //%token <int> LITERAL
 //%token <bool> BLIT
-//%token <string> ID FLIT
+%token <string> ID 
 %token EOF FN
 
 %start defns
@@ -28,6 +28,22 @@ var_def:
     LET ID typ EQ expr { }
 mod: 
     MOD LBRACE defns RBRACE { Mod $1 }
+
+body: 
+| body stmt { stmt @ [stmt]}
+
+stmt: 
+    expr SEMI    { Expr $1 }
+
+expr:
+    //LITERAL          { Literal($1)            }
+  //| FLIT	     { Fliteral($1)           }
+  | ID               { Id($1)                 }
+  //| ID ASSIGN expr   { Assign($1, $3)         }
+  //| ID LPAREN args_opt RPAREN { Call($1, $3)  }
+  | LPAREN expr RPAREN { $2                   }
+
+
 
 typ:
     INT   { Int   }
