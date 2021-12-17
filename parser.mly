@@ -14,12 +14,11 @@
 %%
 
 defns: 
-    /* nothing */   { [] }
+    /* nothing */    { [] }
     | defns defn    { defns @ [defn]}
 
 defn:
-                    {[]}
-    |  func_def      {$1}
+    | func_def      {$1}
     | var_def SEMI  {$1}
     | module_           {$1}
 

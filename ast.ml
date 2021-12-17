@@ -21,8 +21,11 @@ type expr =
 type module_ = 
 Modit of string * func_def list
 | Modfuck of string * expr
+
+type defn =
+  module_
   
-type defns = module_ list
+type defns = defn list
 
 
 
