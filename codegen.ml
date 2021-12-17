@@ -21,7 +21,7 @@
      in
  
      let print_main vd = match vd with
-       | (Modit ("main",[])) -> 
+       | (Modfuck ("main",ListLit(CharLit(c) :: xs))) -> 
          let printf_t : L.lltype = 
            L.var_arg_function_type i32_t [| L.pointer_type i8_t |] in
        let printf_func : L.llvalue = 
@@ -30,7 +30,7 @@
          let main_f = L.define_function name main_t the_module in *)
          let builder = L.builder_at_end context (L.entry_block printf_func) in
          let char_format_str = L.build_global_stringptr "%c\n" "fmt" builder in
-         let l_char = L.const_int i8_t ("") in 
+         let l_char = L.const_int i8_t (Char.code c) in 
          L.build_call printf_func [| char_format_str ; l_char |] "printf" builder;
          L.build_ret_void builder
        | _ -> raise (Failure "YIKES")

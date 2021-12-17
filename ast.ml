@@ -15,9 +15,12 @@ type var_def = {
 
 type expr =
   Id of string
+  | CharLit of char | WildCard
+  | ListLit of expr list
 
 type module_ = 
 Modit of string * func_def list
+| Modfuck of string * expr
   
 type defns = module_ list
 
