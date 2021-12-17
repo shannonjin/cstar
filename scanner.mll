@@ -16,6 +16,7 @@ rule token = parse
 | "int"    { INT }
 | "bool"   { BOOL }
 | "float"  { FLOAT }
+| "char"   { CHAR }
 | "Let"    { LET }
 | "mod"     { MOD }
 | ['a'-'z' 'A'-'Z']['a'-'z' 'A'-'Z' '0'-'9' '_']*     as lxm { ID(lxm) }

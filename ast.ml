@@ -1,5 +1,5 @@
 
-type typ = Int | Bool | Float | Void 
+type typ = Int | Bool | Float | Void | Char 
 
 type func_def = {
     func_name : string; 
