@@ -1,0 +1,29 @@
+### Starting build.
+# Target: compiler.ml.depends, tags: { package(llvm), extension:ml, file:compiler.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm -modules compiler.ml > compiler.ml.depends # cached
+# Target: ast.ml.depends, tags: { package(llvm), extension:ml, file:ast.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm -modules ast.ml > ast.ml.depends # cached
+# Target: ast.cmo, tags: { package(llvm), byte, compile, extension:cmo, extension:ml, file:ast.cmo, file:ast.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package llvm -o ast.cmo ast.ml # cached
+# Target: codegen.ml.depends, tags: { package(llvm), extension:ml, file:codegen.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm -modules codegen.ml > codegen.ml.depends
+# Target: parser.mly, tags: { package(llvm), extension:mly, file:parser.mly, infer, ocaml, ocamlyacc, parser, quiet }
+/Users/shannon/.opam/4.13.1/bin/ocamlyacc parser.mly # cached
+# Target: parser.mli.depends, tags: { package(llvm), extension:mli, file:parser.mli, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm -modules parser.mli > parser.mli.depends # cached
+# Target: parser.cmi, tags: { package(llvm), byte, compile, extension:mli, file:parser.mli, interf, ocaml, quiet }
+ocamlfind ocamlc -c -package llvm -o parser.cmi parser.mli # cached
+# Target: scanner.mll, tags: { package(llvm), extension:mll, file:scanner.mll, lexer, ocaml, ocamllex, quiet }
+/Users/shannon/.opam/4.13.1/bin/ocamllex.opt -q scanner.mll # cached
+# Target: scanner.ml.depends, tags: { package(llvm), extension:ml, file:scanner.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package llvm -modules scanner.ml > scanner.ml.depends # cached
+# Target: codegen.cmo, tags: { package(llvm), byte, compile, extension:cmo, extension:ml, file:codegen.cmo, file:codegen.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package llvm -o codegen.cmo codegen.ml
++ ocamlfind ocamlc -c -package llvm -o codegen.cmo codegen.ml
+File "codegen.ml", line 33, characters 39-43:
+33 |          let l_char = L.const_int i8_t ("") in 
+                                            ^^^^
+Error: This expression has type string but an expression was expected of type
+         int
+Command exited with code 2.
+# Compilation unsuccessful.
