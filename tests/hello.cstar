@@ -1,2 +1,5 @@
 fn puts(s: u8*): ();
 
+fn main(): () = {
+    puts("Hello, World")
+}

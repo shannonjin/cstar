@@ -29,7 +29,7 @@ func_def:
 	 func_def_body = $10 } }
     
 func_decl:
- FN ID LPAREN formals_opt RPAREN COLON typ LPAREN RPAREN SEMI { { 
+ FN ID LPAREN formals_opt RPAREN COLON typ SEMI { { 
 	 func_decl_name = $2;
      func_decl_typ = $7;
 	 func_decl_formals = List.rev $4;} }
